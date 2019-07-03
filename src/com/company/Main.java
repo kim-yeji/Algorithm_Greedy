@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.atm.ATM;
 import com.company.coin.Coin;
+import com.company.meetingRoom.MeetingRoom;
 import com.company.minimum_payment.Minimum_payment;
 import com.company.moneyChange.Change;
 import com.company.temperature.Temperature;
@@ -23,6 +24,8 @@ public class Main {
                 (new Coin()).run();
             } else if ("11399".equals(args[0])) {
                 (new ATM()).run();
+            } else if ("1931".equals(args[0])) {
+                (new MeetingRoom()).run();
             }
         } else {
             System.out.println("Input the Argument!");
