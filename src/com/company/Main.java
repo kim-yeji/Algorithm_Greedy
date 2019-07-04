@@ -1,10 +1,12 @@
 package com.company;
 
 import com.company.atm.ATM;
+import com.company.bracket.Bracket;
 import com.company.coin.Coin;
 import com.company.meetingRoom.MeetingRoom;
 import com.company.minimum_payment.Minimum_payment;
 import com.company.moneyChange.Change;
+import com.company.rope.Rope;
 import com.company.temperature.Temperature;
 
 
@@ -26,6 +28,10 @@ public class Main {
                 (new ATM()).run();
             } else if ("1931".equals(args[0])) {
                 (new MeetingRoom()).run();
+            } else if ("2217".equals(args[0])) {
+                (new Rope()).run();
+            } else if ("1541".equals(args[0])) {
+                (new Bracket()).run();
             }
         } else {
             System.out.println("Input the Argument!");
