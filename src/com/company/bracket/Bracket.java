@@ -22,12 +22,11 @@ public class Bracket implements AlgolRun {
 //             이후 한번이라도 -가 나온 경우 false를 유지한다.
 //             중간에 나오는 +연산은 -를 위해 더 해주기만 할 뿐이므로 true로 바꾸지 않는다.
 
-        boolean flag = true;
-
 //            0 -> 아스키코드 48
 //            + -> 43
 //            - -> 45
 
+        boolean flag = true;
         for(char c : str.toCharArray()){
             int su = c - '0';
             if(su < 0){
@@ -37,6 +36,7 @@ public class Bracket implements AlgolRun {
                    // -가 나오면 flag에 따라 최종 값에 더해준다.
                    if (flag) ans += sum; // 음수
                    else ans -= sum; // 양수
+
                    sum = 0; // 괄호가 시작되었으므로 초기화 한다.
                    flag = false;
                 }
