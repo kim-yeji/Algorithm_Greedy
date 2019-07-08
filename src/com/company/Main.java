@@ -5,13 +5,12 @@ import com.company.atm.ATM;
 import com.company.bracket.Bracket;
 import com.company.coin.Coin;
 import com.company.flip1439.Flip;
-import com.company.inequality.Inequality;
+import com.company.japanChange5585.JapanChange;
 import com.company.meetingRoom.MeetingRoom;
 import com.company.minimum_payment.Minimum_payment;
 import com.company.moneyChange.Change;
 import com.company.polynomial2200.Polynomial;
 import com.company.rope.Rope;
-import com.company.standInLine1138.StandInLine;
 import com.company.temperature.Temperature;
 
 
@@ -43,6 +42,8 @@ public class Main {
                 (new Polynomial()).run();
             } else if ("1439".equals(args[0])) { //190705
                 (new Flip()).run();
+            } else if ("5585".equals(args[0])) { //190708
+                (new JapanChange()).run();
             }
         } else {
             System.out.println("Input the Argument!");
