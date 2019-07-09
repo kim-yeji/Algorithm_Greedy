@@ -4,6 +4,7 @@ import com.company.DNA1969.DNA;
 import com.company.atm.ATM;
 import com.company.bracket.Bracket;
 import com.company.coin.Coin;
+import com.company.contestORintern2875.ContestORintern;
 import com.company.flip1439.Flip;
 import com.company.japanChange5585.JapanChange;
 import com.company.meetingRoom.MeetingRoom;
@@ -11,13 +12,16 @@ import com.company.minimum_payment.Minimum_payment;
 import com.company.moneyChange.Change;
 import com.company.polynomial2200.Polynomial;
 import com.company.rope.Rope;
+import com.company.standInLine1138.StandInLine;
+import com.company.stringEquality1120.StringEquality;
 import com.company.temperature.Temperature;
 
+import java.io.IOException;
 
 
 public class Main {
 
-    public static void main (String[] args){
+    public static void main (String[] args) throws IOException {
 
         if (args.length > 0) {
             if ("3120".equals(args[0])) { //코드업 190701
@@ -44,6 +48,12 @@ public class Main {
                 (new Flip()).run();
             } else if ("5585".equals(args[0])) { //190708
                 (new JapanChange()).run();
+            } else if ("1120".equals(args[0])) { //190709
+                (new StringEquality()).run();
+            } else if ("1138".equals(args[0])) { //190709
+                (new StandInLine()).run();
+            } else if ("2875".equals(args[0])) { //190709
+                (new ContestORintern()).run();
             }
         } else {
             System.out.println("Input the Argument!");

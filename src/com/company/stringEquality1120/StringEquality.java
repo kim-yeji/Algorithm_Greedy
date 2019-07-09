@@ -2,31 +2,28 @@ package com.company.stringEquality1120;
 
 import com.company.inter.AlgolRun;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class StringEquality implements AlgolRun {
     @Override
-    public void run() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public void run(){
+        Scanner scan = new Scanner(System.in);
 
-        String input[] =br.readLine().split(" ");
-        String A = input[0];
-        String B = input[1];
-        int max_same = 0;
+        String A = scan.next();
+        String B = scan.next();
+        int max = 0;
         for(int i=0; i<B.length()-A.length()+1;i++){
-            String tempB = B.substring(i,i+A.length());
-            int same=0;
-            for(int j=0;j<tempB.length();j++){
-                if(A.charAt(j)==tempB.charAt(j)) ++same;
+            int dup=0;
+            for(int j=i; j<i+A.length();j++){
+                if(A.charAt(j-i)==B.charAt(j)) dup++;
             }
-            if(same>max_same) max_same=same;
+            if(dup>max) max=dup;
         }
-        System.out.println(A.length()-max_same);
+        max+=(B.length()-A.length());
+        System.out.println(B.length()-max);
     }
 
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] args) {
         StringEquality se = new StringEquality();
         se.run();
     }

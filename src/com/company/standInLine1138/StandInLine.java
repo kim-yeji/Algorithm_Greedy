@@ -8,47 +8,26 @@ public class StandInLine implements AlgolRun {
     @Override
     public void run() {
         Scanner scan = new Scanner(System.in);
-        int num = scan.nextInt();
+        int num = scan.nextInt(); //인원 수 입력 받기
+
         int[] line = new int[num];
 
-        for(int i=0;i<num;i++){
-            line[i]=scan.nextInt();
-        }
-
-        perm(line, 0);
 
         for(int i=0;i<num;i++){
-            int cnt = 0;
-            for(int j=0;j<i;i++){
-
+            int left = scan.nextInt();
+            for(int j=0;j<num;j++){
+                if(line[j]==0 && left==0){
+                    line[j]=i+1;
+                    break;
+                }else if(line[j]==0){
+                    left--;
+                }
             }
         }
-
-
-    }
-    public void perm(int[] arr, int pivot) {
-        if (pivot == arr.length) {
-            print(arr);
-            return;
+        for(int i=0;i<num;i++){
+            System.out.print(line[i]+" ");
         }
-        for (int i = pivot; i < arr.length; i++) {
-            swap(arr, i, pivot);
-            perm(arr, pivot + 1);
-            swap(arr, i, pivot); }
-    }
 
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    public static void print(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (i == arr.length - 1)
-                System.out.println(arr[i]);
-            else System.out.print(arr[i] + ",");
-        }
     }
 
     public static void main(String[] args){
